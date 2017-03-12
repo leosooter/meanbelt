@@ -1,0 +1,13 @@
+<h2>Play!</h2>
+<p class="error">{{error}}</p>
+<div ng-repeat="question in questions">
+  <h3>{{$index + 1}}.{{question.title}}</h3>
+  <form>
+    <label><input  type="radio" ng-value="question.answers[0]" ng-model="gameAnswers[$index]">{{question.answers[0].answer}}</label>
+    <label><input  type="radio" ng-value="question.answers[1]" ng-model="gameAnswers[$index]">{{question.answers[1].answer}}</label>
+    <label><input  type="radio" ng-value="question.answers[2]" ng-model="gameAnswers[$index]">{{question.answers[2].answer}}</label>
+    <!-- <label ng-repeat="answer in question.answers"><input  type="radio" value="answer.correct" ng-model="gameAnswers[$parent.$index]">{{answer.answer}}</label> -->
+  </form>
+</div>
+<button type="button" ng-click="submitAnswers()">Submit</button>
+<a href="#!dashboard"><button type="button">Cancel</button></a>

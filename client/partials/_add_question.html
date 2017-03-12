@@ -1,0 +1,10 @@
+<h1>Add Question</h1>
+<p class="error">{{error}}</p>
+<form ng-submit="addQuestion()">
+  <input type="text" placeholder="Question" ng-model="newQuestion.title">
+  <input type="text" placeholder="Correct Anwser" ng-model="newAnswer.answer1">
+  <input type="text" placeholder="Fake Anwser" ng-model="newAnswer.answer2">
+  <input type="text" placeholder="Fake Anwser" ng-model="newAnswer.answer3">
+  <input type="submit" value="Add Question">
+</form>
+<a href="#!dashboard"><button type="button">Cancel</button></a>

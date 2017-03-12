@@ -1,0 +1,22 @@
+<h3>Welcome {{currentUser.userName}}</h3><button type="button" ng-click="logout()">Logout</button>
+<h4 class="success">{{successMessage}}</h4>
+<a href="#!play">Play the Game!</a>
+<h4>Search</h4>
+<label><input type="text" ng-model="searchResults.userName" placeholder="Name"></label>
+
+<label><input type="number" ng-model="searchResults.score" placeholder="Score"></label>
+
+<label><input type="number" ng-model="searchResults.percent" step="5" placeholder="Percent"></label>
+
+<button type="button" ng-click="resetSearch()">Reset Search</button>
+
+<table>
+  <tr>
+    <th>Name</th><th>Score</th><th>Percentage</th>
+  </tr>
+  <tr ng-repeat="user in users | orderBy:'percent' : true | filter : { userName : searchResults.userName}" ng-hide="user.percent === NaN || user.percent < searchResults.percent || user.score[0] < searchResults.score">
+    <td>{{user.userName}}</td><td>{{user.score[0]}}/{{user.score[1]}}</td><td>{{user.percent}}%</td>
+  </tr>
+</table>
+
+<a href="#!add_question">Add Question</a>

@@ -1,0 +1,15 @@
+<h1>Login/ Register</h1>
+
+<h2>Login</h2>
+<p class="error">{{loginError}}</p>
+<form class="login-form" ng-submit="login()">
+  <input type="text" name="userName" placeholder="Name" ng-model="loginUser.userName">
+  <input type="submit" value="login">
+</form>
+
+<h2>Register</h2>
+<p class="error">{{registerError}}</p>
+<form class="register-form" ng-submit="register()">
+  <input type="text" name="userName" placeholder="Name" ng-model="newUser.userName">
+  <input type="submit" value="Register">
+</form>
